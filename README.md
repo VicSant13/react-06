@@ -5,8 +5,7 @@
 :check Muestra una lista de productos que vienen de un JSON.
 :check añade un filtro por categoría
 :check Añade un filtro por precio
-
-Haz uso de 'useContext' para evitar pasar props innecesarias
+:check Haz uso de 'useContext' para evitar pasar props innecesarias
 
 2. Shopping Cart
 
