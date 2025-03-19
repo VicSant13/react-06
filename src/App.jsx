@@ -3,25 +3,26 @@ import {products as initialProducts} from './mocks/products.json'
 import { Header } from './components/Header'
 import { Footer } from './components/Footer'
 import { Products } from './components/Products'
-import { useState } from 'react'
 import { useFilters } from './hooks/usefilters.js'
-
+import { Cart } from './components/Cart.jsx'
+import {CartProvider} from './Context/cart.jsx'
 
 
 function App() {
   //useState
-  const [products] = useState(initialProducts) 
+  //const [products] = useState(initialProducts) 
   //custom hook 
   const {filterProducts,filters} = useFilters()
   
-  const filteredProducts = filterProducts(products)
+  const filteredProducts = filterProducts(initialProducts)
 
   return (
-    <>     
+    <CartProvider>     
       <Header/>
+      <Cart/>
       <Products products={filteredProducts}></Products>
       <Footer filters={filters}></Footer>
-    </>
+    </CartProvider>
   )
 }
 
